@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server ",
-    "all": "concurrently \"node server\" \"npm run start --prefix ../product-display-service\"",
-    "dev:all": "concurrently \"nodemon server\" \"npm run server:dev --prefix ../product-display-service\" \"npm run start --prefix ../item-description-service\" \"npm run start --prefix ../customer-review-service\"",
+    "start": "node server",
+    "all": "concurrently \"nodemon server\" \"npm run server:dev --prefix ../product-display-service\" \"npm run start --prefix ../item-description-service\" \"npm run start --prefix ../customer-review-service\"",
     "dev": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
