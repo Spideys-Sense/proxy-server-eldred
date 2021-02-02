@@ -1,9 +1,9 @@
 const express = require('express');
 const axios = require('axios');
-const { productDisplayPort: PORT } = require('../env');
+const { productDisplayPort: PORT, productDisplayHost } = require('../env');
 
 const router = express.Router();
-const MODULE_URL = `http://localhost:${PORT}`;
+const MODULE_URL = `${productDisplayHost}`;
 
 router.get('/productDisplayBundle', (req, res) => {
   axios.get(`${MODULE_URL}/bundle`)
