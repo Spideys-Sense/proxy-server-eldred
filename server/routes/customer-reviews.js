@@ -1,8 +1,8 @@
 const express = require('express');
 const axios = require('axios');
-const { customerReviewsPort: PORT } = require('../env');
+const { customerReviewsPort: PORT, customerReviewsHost } = require('../env');
 
-const MODULE_URL = `http://localhost:${PORT}`;
+const MODULE_URL = `${customerReviewsHost}`;
 const router = express.Router();
 
 router.get('/customerReviewsBundle', (req, res) => {

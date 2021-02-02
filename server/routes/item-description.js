@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const { itemDescriptionPort: PORT } = require('../env');
-const MODULE_URL = `http://localhost:${PORT}`;
+const { itemDescriptionPort: PORT, itemDescriptionHost } = require('../env');
+const MODULE_URL = `${itemDescriptionHost}`;
 
 router.get('/itemDescriptionBundle', (req, res) => {
   console.log('Got to item description route on proxy!');
-  axios.get(`${MODULE_URL}/bundle.js`)
+  axios.get(`${MODULE_URL}/bundle`)
     .then((response) => {
       console.log('got bundle! sending to client');
       res.send(response.data);
