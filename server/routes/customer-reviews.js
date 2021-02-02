@@ -44,4 +44,28 @@ router.get('/api/:id/reviewAverages', (req, res) => {
     });
 });
 
+router.get('/api/:id/photoReviews', (req, res) => {
+  const { id } = req.params;
+
+  axios.get(`${MODULE_URL}/api/${id}/photoReviews`)
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch(() => {
+      res.send('Code failed')
+    });
+});
+
+router.get('/api/:id/:review', (req, res) => {
+  const { id, reviewId } = req.params;
+
+  axios.get(`${MODULE_URL}/api/${id}/${reviewId}`)
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch(() => {
+      res.send('Code failed');
+    });
+});
+
 module.exports = router;
